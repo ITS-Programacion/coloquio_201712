@@ -1,0 +1,13 @@
+<h1>Asignaturas</h1>
+<ul>
+{% for asignatura in asignaturas %}
+    <li><a href="{% url 'asignatura' asignatura.id %}">{{asignatura}}</a></li>
+{% endfor %}
+</ul>
+
+<h1>Alumnos</h1>
+<ul>
+{% for alumno in alumnos %}
+<li><a href="{% url 'alumno' alumno.id %}">{{alumno}}</a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,23 @@
+<h1>{{asignatura}}</h1>
+<table>
+    <thead>
+        <th>Alumno</th>
+        <th>Notas</th>
+        <th>Promedio</th>
+    </thead>
+    <tbody>
+        {% for matricula in asignatura.alumnos.all %}
+        <tr>
+            <td>{{matricula.alumno}}</td>
+            <td>{% for nota in matricula.notas.all %} {{nota.valor}}, {% endfor %}</td>
+            <td>{{matricula.promedio}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<hr>
+
+Total: {{total}}<br>
+Aplazados: {{aplazados}}<br>
+Procentaje Aplazados: {{porcentaje}}% <br>

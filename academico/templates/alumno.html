@@ -1,0 +1,21 @@
+<h1>{{alumno}}</h1>
+<table>
+    <thead>
+        <th>Materia</th>
+        <th>Notas</th>
+        <th>Promedio</th>
+        <th>Aprobo?</th>
+    </thead>
+    <tbody>
+        {% for matricula in alumno.asignaturas.all %}
+        <tr>
+            <td>{{matricula.asignatura}}</td>
+            <td>{% for nota in matricula.notas.all %} {{nota.valor}}, {% endfor %}</td>
+            <td>{{matricula.promedio}}</td>
+            <td>{% if matricula.promedio < 6 %} NO {% else %} SI {% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<hr>
